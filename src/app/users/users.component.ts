@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { User } from '../classes/user';
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
+  imports: [NgbPaginationModule],
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent {
