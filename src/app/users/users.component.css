@@ -3,6 +3,11 @@
     margin-right: 10%;
 }
 .card{
-    padding:5px;
-    margin: 2px;
+    padding:2px;
+    width: 33%; 
+    margin-left: 0.33%;
+}
+.main{
+    width: 80%; 
+    margin-top: 3%;
 }
