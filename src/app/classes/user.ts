@@ -12,6 +12,10 @@ export class User {
     public get getName(){
         return this.full_name;
     }
+    public get getAge(){
+        return this.age;
+    }
+    public get getId(){return this.id}
 
 
 }
