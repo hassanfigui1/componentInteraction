@@ -6,13 +6,15 @@ import { UsersComponent } from './users/users.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AddUserComponent } from './add-user/add-user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import { ViewUserComponent } from './view-user/view-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
     AddUserComponent,
-    EditUserComponent
+    EditUserComponent,
+    ViewUserComponent
   ],
   imports: [
     BrowserModule,
