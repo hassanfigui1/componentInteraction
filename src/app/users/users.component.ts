@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { User } from '../classes/user';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -13,10 +14,13 @@ export class UsersComponent {
   count : number =0;
   tableSize: number = 9;
   tableSizes:any = [5,10,15,20];
-
+  private user_id:any;
   ngOnInit() : void{
+    this.user_id = this.activatedRoute.snapshot.paramMap.get('id');
+    console.log("heloooooooooooo :         ",this.user_id);
     this.usersList;
   }
+  
   user = new User(1,"Hassan Figuigui",25);
   user1 = new User(1,"Hassan Figuigui",25);
   user2 = new User(1,"Hassan Figuigui",25);
@@ -41,18 +45,26 @@ export class UsersComponent {
     new User(16,"Hassan Figuigui",25),
     new User(17,"Hassan Figuigui",25),
     new User(18,"dfdf",23),
-
     new User(19,"Hassan Figuigui",25)
   ];
   usersList(){
     return this.users;
   }
+  
   onTableDataChange(event:any){
     this.page = event;
     this.usersList();
   }
-  
 
+  deleteUser(user :any){
+    return null;
+  }
+  updateUser(user:any){
+    return null;
+  }
+  
+  constructor(private activatedRoute: ActivatedRoute){}
+  
 
 }
 
