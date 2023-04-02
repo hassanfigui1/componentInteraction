@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserInfoService } from '../services/user-info.service';
-import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-view-user',

@@ -1,8 +1,14 @@
-.main{
-    margin-left: 12%;
-    margin-right: 12%;
-    width: 84%; 
-    margin-top: 3%;
+main{
+    margin: auto;
+    margin-top: 5%;
+    background-color: rgb(174, 246, 246);
+    margin-left: auto;
+    margin-right:auto;
+    margin-top: 7%;
+    width: 80%;
+    border: 3px solid green;
+    padding: 10px;
+  
 }
 .card{
     padding:2px;
@@ -13,4 +19,8 @@
 }
 .card-header{
     margin: 0;
+}
+
+.card:hover{
+    background-color: rgb(232, 218, 202);
 }
