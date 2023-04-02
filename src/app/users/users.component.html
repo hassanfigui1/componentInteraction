@@ -6,7 +6,7 @@
         currentPage : page,
         totalItems : count
       }; let i = index  ">
-        <h5 class="card-header border border-primary bg-dark text-white">{{user.getName}}</h5>
+        <h5 routerLink="/user/{{user.getId}}" class="card-header border border-primary bg-dark text-white">{{user.getName}}</h5>
         <div class="card-body">
           <h5 class="card-title">Special title treatment</h5>
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
