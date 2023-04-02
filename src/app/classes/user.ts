@@ -8,11 +8,11 @@ export class User {
         this.full_name = fullname,
         this.age = age
     }
-    public set setName(value:string){
+    public set fullname(value:string){
         this.full_name = value;
     }
     
-    public get getName():string{
+    public get fullname():string{
         return this.full_name;
     }
     public get getAge():number{
