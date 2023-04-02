@@ -6,11 +6,18 @@
             <div class="card-body">
               <h5 class="card-title">{{user.getName}}</h5>
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a routerLink="update" class="btn btn-primary">Go somewhere</a>
+              <a routerLink="edit" class="btn btn-success">Modify</a>
             </div>
           </div>
         </div>
       </div>
 </div>
 
-<form ngForm="ngForm"></form>
+<form #userForm="ngForm">
+    <div class="form-group mb-3">
+      <label>Name</label>
+      <input type="text"  ngModel [(ngModel)]="user.getName" minlength="3" required #name="ngModel" 
+                name="Name" class="form-control">
+      <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is required </small>
+    </div>
+</form>

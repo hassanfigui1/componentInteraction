@@ -1,6 +1,6 @@
 export class User {
     private id: number;
-    private full_name : string;
+     full_name : string;
     private age : number;
   
     constructor(id:number, fullname:string, age:number){
@@ -8,14 +8,17 @@ export class User {
         this.full_name = fullname,
         this.age = age
     }
+    public set setName(value:string){
+        this.full_name = value;
+    }
     
-    public get getName(){
+    public get getName():string{
         return this.full_name;
     }
-    public get getAge(){
+    public get getAge():number{
         return this.age;
     }
-    public get getId(){return this.id}
+    public get getId():number{return this.id}
 
 
 }

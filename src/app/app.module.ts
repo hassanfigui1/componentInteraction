@@ -7,6 +7,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { AddUserComponent } from './add-user/add-user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { ViewUserComponent } from './view-user/view-user.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,8 +20,8 @@ import { ViewUserComponent } from './view-user/view-user.component';
   imports: [
     BrowserModule,
     AppRoutingModule,    
-    NgxPaginationModule
-
+    NgxPaginationModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

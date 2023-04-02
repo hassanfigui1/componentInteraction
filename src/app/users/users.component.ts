@@ -21,8 +21,6 @@ export class UsersComponent {
     console.log("heloooooooooooo :         ",this.user_id);
     this.usersList;
   }
-  
-  user = new User(1,"Hassan Figuigui",25);
   usersList(){
     return this.userService.users;
   }
