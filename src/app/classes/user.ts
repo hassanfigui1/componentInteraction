@@ -15,8 +15,11 @@ export class User {
     public get fullname():string{
         return this.full_name;
     }
-    public get getAge():number{
+    public get user_age():number{
         return this.age;
+    }
+    public set user_age(age:number){
+        this.age = age;
     }
     public get getId():number{return this.id}
 
