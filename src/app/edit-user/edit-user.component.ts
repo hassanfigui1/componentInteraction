@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserInfoService } from '../services/user-info.service';
 
 @Component({
@@ -10,7 +10,8 @@ import { UserInfoService } from '../services/user-info.service';
 export class EditUserComponent {
   user_id:any;
   user:any;
-  constructor(private activatedRoute: ActivatedRoute, private userService: UserInfoService){}
+  constructor(private activatedRoute: ActivatedRoute,
+    private router:Router, private userService: UserInfoService){}
   ngOnInit() : void{
     this.user_id = this.activatedRoute.snapshot.paramMap.get('id');
     this.user_id = Number(this.user_id);
@@ -20,9 +21,9 @@ export class EditUserComponent {
   };
   
   edit(){
-    console.log("hello ", this.user);
     this.user.age(this.user.age);
-    console.log(this.user.age);
+    this.router.navigate(['./']);
+    alert("hel");
   }
 
   

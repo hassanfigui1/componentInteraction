@@ -1,6 +1,6 @@
 export class User {
     private id: number;
-     full_name : string;
+    private full_name : string;
     private age : number;
   
     constructor(id:number, fullname:string, age:number){
