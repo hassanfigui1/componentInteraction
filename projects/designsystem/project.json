@@ -1,0 +1,67 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "designsystem",
+  "projectType": "library",
+  "sourceRoot": "projects/designsystem/src",
+  "prefix": "lib",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:ng-packagr",
+      "options": {
+        "project": "projects/designsystem/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "projects/designsystem/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "projects/designsystem/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production",
+      "outputs": [
+        "{workspaceRoot}/dist/designsystem"
+      ]
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "tsConfig": "projects/designsystem/tsconfig.spec.json",
+        "polyfills": [
+          "zone.js",
+          "zone.js/testing"
+        ]
+      }
+    },
+    "storybook": {
+      "executor": "@storybook/angular:start-storybook",
+      "options": {
+        "configDir": "projects/designsystem/.storybook",
+        "browserTarget": "designsystem:build",
+        "compodoc": true,
+        "compodocArgs": [
+          "-e",
+          "json",
+          "-d",
+          "projects/designsystem"
+        ],
+        "port": 6006
+      }
+    },
+    "build-storybook": {
+      "executor": "@storybook/angular:build-storybook",
+      "options": {
+        "configDir": "projects/designsystem/.storybook",
+        "browserTarget": "designsystem:build",
+        "compodoc": true,
+        "compodocArgs": [
+          "-e",
+          "json",
+          "-d",
+          "projects/designsystem"
+        ],
+        "outputDir": "dist/storybook/designsystem"
+      }
+    }
+  }
+}
