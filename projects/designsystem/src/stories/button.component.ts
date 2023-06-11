@@ -3,15 +3,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'storybook-button',
-  imports: [CommonModule],
-  template: ` <button
-    type="button"
-    (click)="onClick.emit($event)"
-    [ngClass]="classes"
-    [ngStyle]="{ 'background-color': backgroundColor }"
-  >
-    {{ label }}
-  </button>`,
+  // imports: [CommonModule],
+  templateUrl: './buttons.component.html',
   styleUrls: ['./button.css'],
 })
 export default class ButtonComponent {

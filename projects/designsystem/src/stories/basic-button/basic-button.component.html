@@ -1,0 +1,12 @@
+<button
+  [ngClass]="fullWidth ? 'button-full-width' : ''"
+  #tooltip="matTooltip"
+  [matTooltip]="tooltipLabel"
+  [matTooltipPosition]="toolTipPosition"
+  [matTooltipHideDelay]="toolTipHideDelay"
+  mat-button
+  [color]="color"
+  [disabled]="disabled"
+  (click)="clickButton.emit($event)">
+  <mat-label>{{ label }} </mat-label>
+</button>

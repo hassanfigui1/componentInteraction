@@ -8,6 +8,7 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { ViewUserComponent } from './view-user/view-user.component';
 import { FormsModule } from '@angular/forms';
+import { ButtonsModule } from 'projects/designsystem/src/stories/buttons.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,    
     NgxPaginationModule,
-    FormsModule
+    FormsModule,
+    ButtonsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
