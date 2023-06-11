@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="badge-container" *ngIf="internal">
+    <mat-icon class="mat-icon-position" [matTooltip]="tooltip">{{ iconClass }}</mat-icon>
+  </div>
+  <mat-form-field [class.ng-invalid]="showError" appearance="outline" [color]="color">
+    <mat-label>{{ label }} </mat-label>
+    <input
+      data-testid="input"
+      [attr.aria-label]="ariaLabel"
+      matInput
+      [placeholder]="placeholder"
+      [value]="files"
+      [type]="type"
+      [(ngModel)]="files"
+      [disabled]="disabled"
+      (input)="onChangeInput()"
+      [required]="required" />
+    <!-- <mat-hint aria-label="Input Hint" *ngIf="showHint"> {{ hintMessage }} </mat-hint>
+    <mat-error aria-label="Error Hint" *ngIf="showError">{{ errorMessage }}</mat-error> -->
+  </mat-form-field>
+</div>

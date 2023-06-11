@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="badge-container" *ngIf="internal">
+    <mat-icon class="mat-icon-position" [matTooltip]="tooltip">{{ iconClass }}</mat-icon>
+  </div>
+  <mat-form-field [class.ng-invalid]="showError" [color]="color" appearance="outline">
+    <mat-label>{{ label }} </mat-label>
+    <textarea
+      cdkTextareaAutosize
+      #autosize="cdkTextareaAutosize"
+      cdkAutosizeMinRows="{{ minRow }}"
+      cdkAutosizeMaxRows="{{ maxRow }}"
+      [attr.aria-label]="ariaLabel"
+      matInput
+      [placeholder]="placeholder"
+      [(ngModel)]="value"
+      [disabled]="disabled"
+      (input)="onChangeInput()"
+      [required]="required"
+      >{{ value }}</textarea
+    >
+    <mat-hint aria-label="Input Hint" *ngIf="showHint"> {{ hintMessage }} </mat-hint>
+    <mat-error aria-label="Error Hint" *ngIf="showError">{{ errorMessage }}</mat-error>
+  </mat-form-field>
+</div>

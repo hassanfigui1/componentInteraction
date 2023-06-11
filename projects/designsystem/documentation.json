@@ -159,133 +159,6 @@
             "templateData": "<button\r\n  [ngClass]=\"fullWidth ? 'button-full-width' : ''\"\r\n  #tooltip=\"matTooltip\"\r\n  [matTooltip]=\"tooltipLabel\"\r\n  [matTooltipPosition]=\"toolTipPosition\"\r\n  [matTooltipHideDelay]=\"toolTipHideDelay\"\r\n  mat-button\r\n  [color]=\"color\"\r\n  [disabled]=\"disabled\"\r\n  (click)=\"clickButton.emit($event)\">\r\n  <mat-label>{{ label }} </mat-label>\r\n</button>\r\n"
         },
         {
-            "name": "ButtonComponent",
-            "id": "component-ButtonComponent-3ef018869c2bbf66120944d9aa5a289bbb17c2510a0f830038b375052c7bcb9ef40bf0e6ebef9af2cba7cba1bf14da06f509700227c54adc343072d1ab10c469",
-            "file": "projects/designsystem/src/stories/button.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "storybook-button",
-            "styleUrls": [
-                "./button.css"
-            ],
-            "styles": [],
-            "template": "<button   type=\"button\"\n   (click)=\"onClick.emit($event)\"\n   [ngClass]=\"classes\"\n   [ngStyle]=\"{ 'background-color': backgroundColor }\"\n >\n   {{ label }}\n </button>",
-            "templateUrl": [],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [
-                {
-                    "name": "backgroundColor",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nWhat background color to use\n",
-                    "description": "<p>What background color to use</p>\n",
-                    "line": 28,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "label",
-                    "defaultValue": "'Button'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "pos": 827,
-                            "end": 841,
-                            "flags": 8421376,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 330,
-                            "tagName": {
-                                "pos": 828,
-                                "end": 836,
-                                "flags": 8421376,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 79,
-                                "escapedText": "required"
-                            },
-                            "comment": ""
-                        }
-                    ],
-                    "rawdescription": "\n\nButton contents\n\n",
-                    "description": "<p>Button contents</p>\n",
-                    "line": 42,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "primary",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nIs this the principal call to action on the page?\n",
-                    "description": "<p>Is this the principal call to action on the page?</p>\n",
-                    "line": 22,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "size",
-                    "defaultValue": "'medium'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nHow large should the button be?\n",
-                    "description": "<p>How large should the button be?</p>\n",
-                    "line": 34,
-                    "type": "\"small\" | \"medium\" | \"large\"",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [
-                {
-                    "name": "onClick",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nOptional click handler\n",
-                    "description": "<p>Optional click handler</p>\n",
-                    "line": 48,
-                    "type": "EventEmitter"
-                }
-            ],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": false,
-            "imports": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'storybook-button',\r\n  // imports: [CommonModule],\r\n  template: ` <button\r\n    type=\"button\"\r\n    (click)=\"onClick.emit($event)\"\r\n    [ngClass]=\"classes\"\r\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\r\n  >\r\n    {{ label }}\r\n  </button>`,\r\n  styleUrls: ['./button.css'],\r\n})\r\nexport default class ButtonComponent {\r\n  /**\r\n   * Is this the principal call to action on the page?\r\n   */\r\n  @Input()\r\n  primary = false;\r\n\r\n  /**\r\n   * What background color to use\r\n   */\r\n  @Input()\r\n  backgroundColor?: string;\r\n\r\n  /**\r\n   * How large should the button be?\r\n   */\r\n  @Input()\r\n  size: 'small' | 'medium' | 'large' = 'medium';\r\n\r\n  /**\r\n   * Button contents\r\n   *\r\n   * @required\r\n   */\r\n  @Input()\r\n  label = 'Button';\r\n\r\n  /**\r\n   * Optional click handler\r\n   */\r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\r\n\r\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\r\n  }\r\n}\r\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ".storybook-button {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  font-weight: 700;\r\n  border: 0;\r\n  border-radius: 3em;\r\n  cursor: pointer;\r\n  display: inline-block;\r\n  line-height: 1;\r\n}\r\n.storybook-button--primary {\r\n  color: white;\r\n  background-color: #1ea7fd;\r\n}\r\n.storybook-button--secondary {\r\n  color: #333;\r\n  background-color: transparent;\r\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\r\n}\r\n.storybook-button--small {\r\n  font-size: 12px;\r\n  padding: 10px 16px;\r\n}\r\n.storybook-button--medium {\r\n  font-size: 14px;\r\n  padding: 11px 20px;\r\n}\r\n.storybook-button--large {\r\n  font-size: 16px;\r\n  padding: 12px 24px;\r\n}\r\n",
-                    "styleUrl": "./button.css"
-                }
-            ],
-            "stylesData": "",
-            "accessors": {
-                "classes": {
-                    "name": "classes",
-                    "getSignature": {
-                        "name": "classes",
-                        "type": "[]",
-                        "returnType": "string[]",
-                        "line": 50
-                    }
-                }
-            }
-        },
-        {
             "name": "DesignsystemComponent",
             "id": "component-DesignsystemComponent-034e8d413d17c76fcb6cf6b7f468bff7da5944b8e08a845b39b6c6ea5a3fd1494b05ac7e3f15d933a47d9d1ed75fddb17e0bf2b753cbefebecb41f8770a2b487",
             "file": "projects/designsystem/src/lib/designsystem.component.ts",
@@ -396,6 +269,610 @@
             "stylesData": ""
         },
         {
+            "name": "InputFieldComponent",
+            "id": "component-InputFieldComponent-611a1d6db8411ce69a625a4187c5d54908d704947f69d651db02c639c9fcc1392c0e86d954a16aeae3c1c30520bafceb6b7e8779a3cb3c26534b18bfca90c1f6",
+            "file": "projects/designsystem/src/stories/components/input-field/input-field.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ds-input",
+            "styleUrls": [
+                "./input-field.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./input-field.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "ariaLabel",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "color",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33,
+                    "type": "\"primary\" | \"accent\" | \"warn\"",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "errorMessage",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "files",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31,
+                    "type": "Array<any>",
+                    "decorators": []
+                },
+                {
+                    "name": "hintMessage",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "iconClass",
+                    "defaultValue": "'security'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "internal",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 26,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "maxlength",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "path",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "required",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 29,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "showError",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "showHint",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "tooltip",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'text'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "\"text\" | \"email\" | \"number\"",
+                    "decorators": []
+                },
+                {
+                    "name": "unique",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 30,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "Change",
+                    "defaultValue": "new EventEmitter<{\r\n    path: string;\r\n    value: string;\r\n    unique: boolean;\r\n    files: any;\r\n  }>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 41,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "inputChange",
+                    "defaultValue": "new EventEmitter<{\r\n    path: string;\r\n    value: string;\r\n    unique: boolean;\r\n  }>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 35,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "pwHide",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 48
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onChange",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 57,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onChangeInput",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 50,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'ds-input',\r\n  templateUrl: './input-field.component.html',\r\n  styleUrls: ['./input-field.component.scss'],\r\n})\r\nexport class InputFieldComponent {\r\n  @Input() label = '';\r\n  @Input() ariaLabel = '';\r\n  @Input() placeholder = '';\r\n\r\n  @Input() value = '';\r\n  @Input() path = '';\r\n  @Input() type: 'text' | 'email' | 'number' = 'text';\r\n\r\n  @Input() showHint = false;\r\n  @Input() hintMessage = '';\r\n  @Input() maxlength = '';\r\n\r\n  @Input() showError = false;\r\n  @Input() errorMessage = '';\r\n\r\n  @Input() tooltip = '';\r\n  @Input() iconClass = 'security';\r\n  @Input() internal = false;\r\n\r\n  @Input() disabled = false;\r\n  @Input() required = false;\r\n  @Input() unique = false;\r\n  @Input() files!: Array<any>;\r\n  @Input()\r\n  color: 'primary' | 'accent' | 'warn' = 'primary';\r\n\r\n  @Output() inputChange = new EventEmitter<{\r\n    path: string;\r\n    value: string;\r\n    unique: boolean;\r\n  }>();\r\n\r\n  @Output() Change = new EventEmitter<{\r\n    path: string;\r\n    value: string;\r\n    unique: boolean;\r\n    files: any;\r\n  }>();\r\n\r\n  pwHide = true;\r\n\r\n  onChangeInput() {\r\n    this.inputChange.emit({\r\n      path: this.path,\r\n      value: this.value,\r\n      unique: this.unique,\r\n    });\r\n  }\r\n  onChange() {\r\n    this.Change.emit({\r\n      path: this.path,\r\n      value: this.value,\r\n      unique: this.unique,\r\n      files: this.files,\r\n    });\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "mat-form-field {\r\n  width: 100%;\r\n}\r\n.container {\r\n  display: flex;\r\n  flex-direction: row;\r\n}\r\n\r\n.mat-icon-position {\r\n  position: relative !important;\r\n  font-size: 16px;\r\n  margin: 4px;\r\n  color: #757575;\r\n}\r\n.badge-container {\r\n  background-color: #e6e6e6;\r\n  width: 24px;\r\n  height: 24px;\r\n  border-radius: 12px;\r\n  position: relative;\r\n  top: 13px;\r\n  margin-right: 16.5px;\r\n}\r\n",
+                    "styleUrl": "./input-field.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"container\">\r\n  <div class=\"badge-container\" *ngIf=\"internal\">\r\n    <mat-icon class=\"mat-icon-position\" [matTooltip]=\"tooltip\">{{ iconClass }}</mat-icon>\r\n  </div>\r\n  <mat-form-field [class.ng-invalid]=\"showError\" appearance=\"outline\" [color]=\"color\">\r\n    <mat-label>{{ label }} </mat-label>\r\n    <input\r\n      [maxlength]=\"maxlength\"\r\n      data-testid=\"input\"\r\n      [attr.aria-label]=\"ariaLabel\"\r\n      matInput\r\n      [placeholder]=\"placeholder\"\r\n      [value]=\"value\"\r\n      [type]=\"type\"\r\n      [(ngModel)]=\"value\"\r\n      [disabled]=\"disabled\"\r\n      (input)=\"onChangeInput()\"\r\n      (change)=\"onChange()\"\r\n      [required]=\"required\" />\r\n    <mat-hint aria-label=\"Input Hint\" *ngIf=\"showHint\"> {{ hintMessage }}</mat-hint>\r\n    <mat-error aria-label=\"Error Hint\" *ngIf=\"showError\">{{ errorMessage }}</mat-error>\r\n  </mat-form-field>\r\n</div>\r\n"
+        },
+        {
+            "name": "InputFieldsUploadFileComponent",
+            "id": "component-InputFieldsUploadFileComponent-b10798cb8fdc8daf3222c31e7dc7af5bc276735e6a6db471690d65f29a6664cffaad87d081b91b77f4633b326992a25bead0951e142758b601acbfd052e92aed",
+            "file": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ds-input-fields-upload-file",
+            "styleUrls": [
+                "./input-fields-upload-file.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./input-fields-upload-file.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "ariaLabel",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "color",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31,
+                    "type": "\"primary\" | \"accent\" | \"warn\"",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "errorMessage",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "files",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 39,
+                    "type": "Array<any>",
+                    "decorators": []
+                },
+                {
+                    "name": "hintMessage",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "iconClass",
+                    "defaultValue": "'security'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "internal",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "path",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "required",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "showError",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "showHint",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "tooltip",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'text'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "\"text\" | \"email\" | \"number\"",
+                    "decorators": []
+                },
+                {
+                    "name": "unique",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 29,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "filesChange",
+                    "defaultValue": "new EventEmitter<any>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 40,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "inputChange",
+                    "defaultValue": "new EventEmitter<{\r\n    path: string;\r\n    value: string;\r\n    unique: boolean;\r\n  }>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onfilesChange",
+                    "defaultValue": "new EventEmitter<any>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 41,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "onChangeInput",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 43,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'ds-input-fields-upload-file',\r\n  templateUrl: './input-fields-upload-file.component.html',\r\n  styleUrls: ['./input-fields-upload-file.component.scss'],\r\n})\r\nexport class InputFieldsUploadFileComponent {\r\n  @Input() label = '';\r\n  @Input() ariaLabel = '';\r\n  @Input() placeholder = '';\r\n\r\n  @Input() value = '';\r\n  @Input() path = '';\r\n  @Input() type: 'text' | 'email' | 'number' = 'text';\r\n\r\n  @Input() showHint = false;\r\n  @Input() hintMessage = '';\r\n\r\n  @Input() showError = false;\r\n  @Input() errorMessage = '';\r\n\r\n  @Input() tooltip = '';\r\n  @Input() iconClass = 'security';\r\n  @Input() internal = false;\r\n\r\n  @Input() disabled = false;\r\n  @Input() required = false;\r\n  @Input() unique = false;\r\n  @Input()\r\n  color: 'primary' | 'accent' | 'warn' = 'primary';\r\n\r\n  @Output() inputChange = new EventEmitter<{\r\n    path: string;\r\n    value: string;\r\n    unique: boolean;\r\n  }>();\r\n\r\n  @Input() files?: Array<any>;\r\n  @Output() filesChange = new EventEmitter<any>();\r\n  @Output() onfilesChange = new EventEmitter<any>();\r\n\r\n  onChangeInput() {\r\n    this.filesChange.emit(this.files);\r\n    this.onfilesChange.emit();\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "mat-form-field {\r\n  width: 100% !important;\r\n}\r\n.container {\r\n  display: flex;\r\n  flex-direction: row;\r\n}\r\n\r\n.mat-icon-position {\r\n  position: relative !important;\r\n  font-size: 16px;\r\n  margin: 4px;\r\n  color: #757575;\r\n}\r\n.badge-container {\r\n  background-color: #e6e6e6;\r\n  width: 24px;\r\n  height: 24px;\r\n  border-radius: 12px;\r\n  position: relative;\r\n  top: 13px;\r\n  margin-right: 16.5px;\r\n}\r\n",
+                    "styleUrl": "./input-fields-upload-file.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"container\">\r\n  <div class=\"badge-container\" *ngIf=\"internal\">\r\n    <mat-icon class=\"mat-icon-position\" [matTooltip]=\"tooltip\">{{ iconClass }}</mat-icon>\r\n  </div>\r\n  <mat-form-field [class.ng-invalid]=\"showError\" appearance=\"outline\" [color]=\"color\">\r\n    <mat-label>{{ label }} </mat-label>\r\n    <input\r\n      data-testid=\"input\"\r\n      [attr.aria-label]=\"ariaLabel\"\r\n      matInput\r\n      [placeholder]=\"placeholder\"\r\n      [value]=\"files\"\r\n      [type]=\"type\"\r\n      [(ngModel)]=\"files\"\r\n      [disabled]=\"disabled\"\r\n      (input)=\"onChangeInput()\"\r\n      [required]=\"required\" />\r\n    <!-- <mat-hint aria-label=\"Input Hint\" *ngIf=\"showHint\"> {{ hintMessage }} </mat-hint>\r\n    <mat-error aria-label=\"Error Hint\" *ngIf=\"showError\">{{ errorMessage }}</mat-error> -->\r\n  </mat-form-field>\r\n</div>\r\n"
+        },
+        {
+            "name": "InputFileComponent",
+            "id": "component-InputFileComponent-2762ca50c06039d61cfa35e0970d2fb7257de93116c667320caf3e52e167c54bda182784dab9e4ede8afb181cff556e091ef3fa8a37616763533f16ab458a00d",
+            "file": "projects/designsystem/src/stories/components/input-file/input-file.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ds-input-file",
+            "styleUrls": [
+                "./input-file.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./input-file.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "id",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "changeFile",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "uploadFile",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'ds-input-file',\r\n  templateUrl: './input-file.component.html',\r\n  styleUrls: ['./input-file.component.scss'],\r\n})\r\nexport class InputFileComponent {\r\n  @Input() id = '';\r\n  @Input() disabled = false;\r\n\r\n  @Output() changeFile = new EventEmitter<Event>();\r\n  uploadFile(event: Event) {\r\n    this.changeFile.emit(event);\r\n    console.log(event);\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./input-file.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<input\r\ntype=\"file\"\r\nid=\"{{ id }}\"\r\n[disabled]=\"disabled\"\r\n(input)=\"uploadFile($event)\" />\r\n"
+        },
+        {
             "name": "PageComponent",
             "id": "component-PageComponent-65ac8f4d96f3d447fcc29e2616666b0b362372cb976d10a41ae9bd2db64613ce5e69356d9548c49510c5b2df2826dfe04eed6119a7513d6148781725511fb52c",
             "file": "projects/designsystem/src/stories/page.component.ts",
@@ -477,6 +954,522 @@
                 }
             ],
             "stylesData": ""
+        },
+        {
+            "name": "PasswordFieldComponent",
+            "id": "component-PasswordFieldComponent-5eb4826964572a5277dba66a5951714cb9b67a85006e3e5dda32390c0f6759b24526f38c02976c8a808870d6d06f3b3656dbd3d47540359d83178a6f1807a005",
+            "file": "projects/designsystem/src/stories/components/password-field/password-field.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ds-password-field",
+            "styleUrls": [
+                "./password-field.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./password-field.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "ariaLabel",
+                    "defaultValue": "'Password field'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "ariaLabelHideBtn",
+                    "defaultValue": "'Show password'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "color",
+                    "defaultValue": "'accent'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "\"primary\" | \"accent\" | \"warn\"",
+                    "decorators": []
+                },
+                {
+                    "name": "errorMessage",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Password'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "matchError",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "matchPasswordMessage",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "minlength",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "pattern",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "'Password'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "required",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "showError",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "inputChange",
+                    "defaultValue": "new EventEmitter<{ passwordValue: string }>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onchange",
+                    "defaultValue": "new EventEmitter<{ passwordValue: string }>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "hide",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 24
+                },
+                {
+                    "name": "passwordValue",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 23
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onChange",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 31,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onChangeInput",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 26,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'ds-password-field',\r\n  templateUrl: './password-field.component.html',\r\n  styleUrls: ['./password-field.component.scss'],\r\n})\r\nexport class PasswordFieldComponent {\r\n  @Input() label = 'Password';\r\n  @Input() placeholder = 'Password';\r\n  @Input() ariaLabel = 'Password field';\r\n  @Input() color: 'primary' | 'accent' | 'warn' = 'accent';\r\n  @Input() ariaLabelHideBtn = 'Show password';\r\n  @Input() required = false;\r\n  @Input() showError = false;\r\n  @Input() matchError = false;\r\n  @Input() errorMessage = '';\r\n  @Input() matchPasswordMessage = '';\r\n  @Input() pattern = '';\r\n  @Output() inputChange = new EventEmitter<{ passwordValue: string }>();\r\n  @Output() onchange = new EventEmitter<{ passwordValue: string }>();\r\n  @Input() minlength = '';\r\n  passwordValue = '';\r\n  hide = true;\r\n\r\n  onChangeInput() {\r\n    this.inputChange.emit({\r\n      passwordValue: this.passwordValue,\r\n    });\r\n  }\r\n  onChange() {\r\n    this.onchange.emit({\r\n      passwordValue: this.passwordValue,\r\n    });\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "mat-form-field {\r\n  width: 100%;\r\n}\r\n .matchError{\r\n  color: var(--mdc-theme-error, #f44336);\r\n    font-weight: 400;\r\n    font-size: 12px;\r\n    position: absolute;\r\n    left: 0px;\r\n    top: 56px;\r\n }",
+                    "styleUrl": "./password-field.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<mat-form-field   [ngClass]=\"{'mdc-text-field--invalid': matchError}\"  [color]=\"color\" appearance=\"outline\">\r\n  <mat-label>{{ label }} </mat-label>\r\n  <input\r\n    [minlength]=\"minlength\"\r\n    [pattern]=\"pattern\"\r\n    data-testid=\"password-input\"\r\n    [attr.aria-label]=\"ariaLabel\"\r\n    matInput\r\n    [placeholder]=\"placeholder\"\r\n    [(ngModel)]=\"passwordValue\"\r\n    [type]=\"hide ? 'password' : 'text'\"\r\n    (input)=\"onChangeInput()\"\r\n    (change)=\"onChange()\"\r\n    [required]=\"required\"/>\r\n  <button\r\n    data-testid=\"pw-show-btn\"\r\n    mat-icon-button\r\n    matSuffix\r\n    (click)=\"hide = !hide\"\r\n    [attr.aria-label]=\"ariaLabelHideBtn\"\r\n    [attr.aria-pressed]=\"hide\">\r\n    <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>\r\n  </button>\r\n  <mat-error [class.ng-invalid]=\"showError\">{{ errorMessage }}</mat-error>\r\n  <span class=\"matchError\" *ngIf=\"matchError\">{{ matchPasswordMessage }}</span> \r\n</mat-form-field>\r\n"
+        },
+        {
+            "name": "TextareaComponent",
+            "id": "component-TextareaComponent-b64f9b4716564786e9622f7acb991119d81149bf57fccc1dbcf37146d6ce091bc296e3e51a7aa09a7fffce4a1f6ec393e14412bee93f70c06a27146a107cf830",
+            "file": "projects/designsystem/src/stories/components/textarea/textarea.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ds-textarea",
+            "styleUrls": [
+                "./textarea.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./textarea.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "ariaLabel",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "autoResize",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "color",
+                    "defaultValue": "'accent'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "\"primary\" | \"accent\" | \"warn\"",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "errorMessage",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "hintMessage",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "iconClass",
+                    "defaultValue": "'security'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 30,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "internal",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "maxRow",
+                    "defaultValue": "'5'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "minRow",
+                    "defaultValue": "'1'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "path",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "required",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 34,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "showError",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 26,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "showHint",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "tooltip",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 29,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'text'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "\"text\" | \"email\" | \"number\"",
+                    "decorators": []
+                },
+                {
+                    "name": "unique",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 35,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "inputChange",
+                    "defaultValue": "new EventEmitter<{\r\n    path: string;\r\n    value: string;\r\n    unique: boolean;\r\n  }>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 37,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "autosize",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "CdkTextareaAutosize",
+                    "optional": false,
+                    "description": "",
+                    "line": 10,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'autosize'"
+                        }
+                    ],
+                    "modifierKind": [
+                        167
+                    ]
+                },
+                {
+                    "name": "pwHide",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 43
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnChanges",
+                    "args": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 52,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onChangeInput",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 45,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, Output, ViewChild,SimpleChanges,ChangeDetectionStrategy, OnChanges } from '@angular/core';\r\nimport { CdkTextareaAutosize } from '@angular/cdk/text-field';\r\n@Component({\r\n  selector: 'ds-textarea',\r\n  templateUrl: './textarea.component.html',\r\n  styleUrls: ['./textarea.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class TextareaComponent implements OnChanges{\r\n  @ViewChild('autosize') autosize!: CdkTextareaAutosize;\r\n\r\n  @Input() label = '';\r\n  @Input() ariaLabel = '';\r\n  @Input() placeholder = '';\r\n  @Input() maxRow = '5';\r\n  @Input() minRow = '1';\r\n  @Input() value ='';\r\n  @Input() path = '';\r\n  @Input() type: 'text' | 'email' | 'number' = 'text';\r\n  @Input() color: 'primary' | 'accent' | 'warn' = 'accent';\r\n\r\n  @Input() autoResize = false;\r\n  @Input() showHint = false;\r\n  @Input() hintMessage = '';\r\n\r\n  @Input() showError = false;\r\n  @Input() errorMessage = '';\r\n\r\n  @Input() tooltip = '';\r\n  @Input() iconClass = 'security';\r\n  @Input() internal = false;\r\n\r\n  @Input() disabled = false;\r\n  @Input() required = false;\r\n  @Input() unique = false;\r\n\r\n  @Output() inputChange = new EventEmitter<{\r\n    path: string;\r\n    value: string;\r\n    unique: boolean;\r\n  }>();\r\n\r\n  pwHide = true;\r\n\r\n  onChangeInput() {\r\n    this.inputChange.emit({\r\n      path: this.path,\r\n      value: this.value,\r\n      unique: this.unique,\r\n    });\r\n  }\r\n  ngOnChanges(changes: SimpleChanges) {\r\n    this.value=changes['value'].currentValue;\r\n  }\r\n  \r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "mat-form-field {\r\n  width: 100%;\r\n}\r\n.container {\r\n  display: flex;\r\n  flex-direction: row;\r\n}\r\n\r\n.mat-icon-position {\r\n  position: relative !important;\r\n  font-size: 16px;\r\n  margin: 4px;\r\n  color: #757575;\r\n}\r\n.badge-container {\r\n  background-color: #e6e6e6;\r\n  width: 24px;\r\n  height: 24px;\r\n  border-radius: 12px;\r\n  position: relative;\r\n  top: 13px;\r\n  margin-right: 16.5px;\r\n}\r\n",
+                    "styleUrl": "./textarea.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "implements": [
+                "OnChanges"
+            ],
+            "templateData": "<div class=\"container\">\r\n  <div class=\"badge-container\" *ngIf=\"internal\">\r\n    <mat-icon class=\"mat-icon-position\" [matTooltip]=\"tooltip\">{{ iconClass }}</mat-icon>\r\n  </div>\r\n  <mat-form-field [class.ng-invalid]=\"showError\" [color]=\"color\" appearance=\"outline\">\r\n    <mat-label>{{ label }} </mat-label>\r\n    <textarea\r\n      cdkTextareaAutosize\r\n      #autosize=\"cdkTextareaAutosize\"\r\n      cdkAutosizeMinRows=\"{{ minRow }}\"\r\n      cdkAutosizeMaxRows=\"{{ maxRow }}\"\r\n      [attr.aria-label]=\"ariaLabel\"\r\n      matInput\r\n      [placeholder]=\"placeholder\"\r\n      [(ngModel)]=\"value\"\r\n      [disabled]=\"disabled\"\r\n      (input)=\"onChangeInput()\"\r\n      [required]=\"required\"\r\n      >{{ value }}</textarea\r\n    >\r\n    <mat-hint aria-label=\"Input Hint\" *ngIf=\"showHint\"> {{ hintMessage }} </mat-hint>\r\n    <mat-error aria-label=\"Error Hint\" *ngIf=\"showError\">{{ errorMessage }}</mat-error>\r\n  </mat-form-field>\r\n</div>\r\n"
         }
     ],
     "modules": [
@@ -567,10 +1560,91 @@
                     "elements": []
                 }
             ]
+        },
+        {
+            "name": "InputFieldsModule",
+            "id": "module-InputFieldsModule-64332d94c888db39a2916fff05d3fc662f4b6a56da8952e457d3adf27b3da28961961dd6fa0f45a9b1b6fc305978a1ad07c8fb0029e31e06489de27efca5c27c",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/designsystem/src/stories/components/input-fields.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { InputFieldComponent } from './input-field/input-field.component';\r\nimport { PasswordFieldComponent } from './password-field/password-field.component';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { MatInputModule } from '@angular/material/input';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { MatButtonModule } from '@angular/material/button';\r\nimport { TextareaComponent } from './textarea/textarea.component';\r\nimport { InputFileComponent } from './input-file/input-file.component';\r\nimport { MatTooltipModule } from '@angular/material/tooltip';\r\nimport { InputFieldsUploadFileComponent } from './input-field-upload-file/input-fields-upload-file.component';\r\n@NgModule({\r\n  declarations: [\r\n    InputFieldComponent,\r\n    PasswordFieldComponent,\r\n    TextareaComponent,\r\n    InputFileComponent,\r\n    InputFieldsUploadFileComponent,\r\n    InputFieldsUploadFileComponent,\r\n  ],\r\n  imports: [CommonModule, FormsModule, MatInputModule, MatButtonModule, MatIconModule, MatTooltipModule],\r\n  exports: [\r\n    InputFieldComponent,\r\n    PasswordFieldComponent,\r\n    TextareaComponent,\r\n    InputFileComponent,\r\n    InputFieldsUploadFileComponent,\r\n  ],\r\n})\r\nexport class InputFieldsModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "InputFieldComponent"
+                        },
+                        {
+                            "name": "InputFieldsUploadFileComponent"
+                        },
+                        {
+                            "name": "InputFieldsUploadFileComponent"
+                        },
+                        {
+                            "name": "InputFileComponent"
+                        },
+                        {
+                            "name": "PasswordFieldComponent"
+                        },
+                        {
+                            "name": "TextareaComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "InputFieldComponent"
+                        },
+                        {
+                            "name": "InputFieldsUploadFileComponent"
+                        },
+                        {
+                            "name": "InputFileComponent"
+                        },
+                        {
+                            "name": "PasswordFieldComponent"
+                        },
+                        {
+                            "name": "TextareaComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
         }
     ],
     "miscellaneous": {
         "variables": [
+            {
+                "name": "AutoResize",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
             {
                 "name": "Color",
                 "ctype": "miscellaneous",
@@ -592,6 +1666,56 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/input-file/input-file.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/password-field/password-field.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Disabled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -602,14 +1726,94 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Large",
+                "name": "DisabledField",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/designsystem/src/stories/Button.stories.ts",
+                "file": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    size: 'large',\r\n    label: 'Button',\r\n  },\r\n}"
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "DisabledField",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "DisabledField",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "IconLabelField",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "IconLabelField",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "IconLabelField",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "IconLabelFieldFilled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "IconLabelFieldFilled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "IconLabelFieldFilled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "LoggedIn",
@@ -652,14 +1856,14 @@
                 "defaultValue": "{\r\n  render: (args: Page) => ({\r\n    props: args,\r\n  }),\r\n}"
             },
             {
-                "name": "meta",
+                "name": "MaxLenght",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/designsystem/src/stories/Button.stories.ts",
+                "file": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<Button>",
-                "defaultValue": "{\r\n  title: 'Example/Button',\r\n  component: Button,\r\n  tags: ['autodocs'],\r\n  render: (args: Button) => ({\r\n    props: {\r\n      backgroundColor: null,\r\n      ...args,\r\n    },\r\n  }),\r\n  argTypes: {\r\n    backgroundColor: {\r\n      control: 'color',\r\n    },\r\n  },\r\n}"
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "meta",
@@ -669,7 +1873,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Header>",
-                "defaultValue": "{\r\n  title: 'Example/Header',\r\n  component: Header,\r\n  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/angular/writing-docs/autodocs\r\n  tags: ['autodocs'],\r\n  render: (args) => ({ props: args }),\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [Button],\r\n      imports: [CommonModule],\r\n    }),\r\n  ],\r\n  parameters: {\r\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\r\n    layout: 'fullscreen',\r\n  },\r\n}"
+                "defaultValue": "{\r\n  title: 'Example/Header',\r\n  component: Header,\r\n  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/angular/writing-docs/autodocs\r\n  tags: ['autodocs'],\r\n  render: (args) => ({ props: args }),\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [CommonModule],\r\n    }),\r\n  ],\r\n  parameters: {\r\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\r\n    layout: 'fullscreen',\r\n  },\r\n}"
             },
             {
                 "name": "meta",
@@ -679,7 +1883,37 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Page>",
-                "defaultValue": "{\r\n  title: 'Example/Page',\r\n  component: Page,\r\n  parameters: {\r\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\r\n    layout: 'fullscreen',\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [Button, Header],\r\n      imports: [CommonModule],\r\n    }),\r\n  ],\r\n}"
+                "defaultValue": "{\r\n  title: 'Example/Page',\r\n  component: Page,\r\n  parameters: {\r\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\r\n    layout: 'fullscreen',\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [Header],\r\n      imports: [CommonModule],\r\n    }),\r\n  ],\r\n}"
+            },
+            {
+                "name": "PasswordErrorState",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/password-field/password-field.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "PasswordValue",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/password-field/password-field.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "PasswordValueShown",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/password-field/password-field.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "preview",
@@ -692,34 +1926,94 @@
                 "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/,\n      },\n    },\n  },\n}"
             },
             {
-                "name": "Primary",
+                "name": "RequiredField",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/designsystem/src/stories/Button.stories.ts",
+                "file": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    primary: true,\r\n    label: 'Button',\r\n  },\r\n}"
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Secondary",
+                "name": "RequiredField",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/designsystem/src/stories/Button.stories.ts",
+                "file": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    label: 'Button',\r\n  },\r\n}"
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Small",
+                "name": "RequiredField",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/designsystem/src/stories/Button.stories.ts",
+                "file": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    size: 'small',\r\n    label: 'Button',\r\n  },\r\n}"
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "RequiredFieldErrorState",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "RequiredFieldErrorState",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "RequiredFieldErrorState",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "ShowHint",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "ShowHint",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "ShowHint",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Template",
@@ -732,6 +2026,56 @@
                 "defaultValue": "(args: BasicButtonComponent) => ({\r\n  props: {\r\n    ...args,\r\n  },\r\n})"
             },
             {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<InputFieldComponent>",
+                "defaultValue": "(args: InputFieldComponent) => ({\r\n  props: {\r\n    ...args,\r\n  },\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<InputFieldsUploadFileComponent>",
+                "defaultValue": "(args: InputFieldsUploadFileComponent) => ({\r\n  props: {\r\n    ...args,\r\n  },\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/input-file/input-file.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<InputFileComponent>",
+                "defaultValue": "(args: InputFileComponent) => ({\r\n  props: {\r\n    ...args,\r\n  },\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/password-field/password-field.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<PasswordFieldComponent>",
+                "defaultValue": "(args: PasswordFieldComponent) => ({\r\n  props: {\r\n    ...args,\r\n  },\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<TextareaComponent>",
+                "defaultValue": "(args: TextareaComponent) => ({\r\n  props: {\r\n    ...args,\r\n  },\r\n})"
+            },
+            {
                 "name": "Tooltip",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -740,21 +2084,70 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "type",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "type",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "type",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "ValueBinding",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "ValueBinding",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "ValueBinding",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             }
         ],
         "functions": [],
         "typealiases": [
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<Button>",
-                "file": "projects/designsystem/src/stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 180
-            },
             {
                 "name": "Story",
                 "ctype": "miscellaneous",
@@ -780,6 +2173,118 @@
         ],
         "enumerations": [],
         "groupedVariables": {
+            "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts": [
+                {
+                    "name": "AutoResize",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "DisabledField",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "IconLabelField",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "IconLabelFieldFilled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "RequiredField",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "RequiredFieldErrorState",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "ShowHint",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<TextareaComponent>",
+                    "defaultValue": "(args: TextareaComponent) => ({\r\n  props: {\r\n    ...args,\r\n  },\r\n})"
+                },
+                {
+                    "name": "type",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "ValueBinding",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
             "projects/designsystem/src/stories/basic-button/basic-button.stories.ts": [
                 {
                     "name": "Color",
@@ -832,56 +2337,292 @@
                     "defaultValue": "Template.bind({})"
                 }
             ],
-            "projects/designsystem/src/stories/Button.stories.ts": [
+            "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts": [
                 {
-                    "name": "Large",
+                    "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/designsystem/src/stories/Button.stories.ts",
+                    "file": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    size: 'large',\r\n    label: 'Button',\r\n  },\r\n}"
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
                 },
                 {
-                    "name": "meta",
+                    "name": "DisabledField",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/designsystem/src/stories/Button.stories.ts",
+                    "file": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Meta<Button>",
-                    "defaultValue": "{\r\n  title: 'Example/Button',\r\n  component: Button,\r\n  tags: ['autodocs'],\r\n  render: (args: Button) => ({\r\n    props: {\r\n      backgroundColor: null,\r\n      ...args,\r\n    },\r\n  }),\r\n  argTypes: {\r\n    backgroundColor: {\r\n      control: 'color',\r\n    },\r\n  },\r\n}"
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
                 },
                 {
-                    "name": "Primary",
+                    "name": "IconLabelField",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/designsystem/src/stories/Button.stories.ts",
+                    "file": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    primary: true,\r\n    label: 'Button',\r\n  },\r\n}"
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
                 },
                 {
-                    "name": "Secondary",
+                    "name": "IconLabelFieldFilled",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/designsystem/src/stories/Button.stories.ts",
+                    "file": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    label: 'Button',\r\n  },\r\n}"
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
                 },
                 {
-                    "name": "Small",
+                    "name": "MaxLenght",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/designsystem/src/stories/Button.stories.ts",
+                    "file": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    size: 'small',\r\n    label: 'Button',\r\n  },\r\n}"
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "RequiredField",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "RequiredFieldErrorState",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "ShowHint",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<InputFieldComponent>",
+                    "defaultValue": "(args: InputFieldComponent) => ({\r\n  props: {\r\n    ...args,\r\n  },\r\n})"
+                },
+                {
+                    "name": "type",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "ValueBinding",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
+            "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "DisabledField",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "IconLabelField",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "IconLabelFieldFilled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "RequiredField",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "RequiredFieldErrorState",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "ShowHint",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<InputFieldsUploadFileComponent>",
+                    "defaultValue": "(args: InputFieldsUploadFileComponent) => ({\r\n  props: {\r\n    ...args,\r\n  },\r\n})"
+                },
+                {
+                    "name": "type",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "ValueBinding",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
+            "projects/designsystem/src/stories/components/input-file/input-file.component.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/input-file/input-file.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/input-file/input-file.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<InputFileComponent>",
+                    "defaultValue": "(args: InputFileComponent) => ({\r\n  props: {\r\n    ...args,\r\n  },\r\n})"
+                }
+            ],
+            "projects/designsystem/src/stories/components/password-field/password-field.component.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/password-field/password-field.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "PasswordErrorState",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/password-field/password-field.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "PasswordValue",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/password-field/password-field.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "PasswordValueShown",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/password-field/password-field.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/designsystem/src/stories/components/password-field/password-field.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<PasswordFieldComponent>",
+                    "defaultValue": "(args: PasswordFieldComponent) => ({\r\n  props: {\r\n    ...args,\r\n  },\r\n})"
                 }
             ],
             "projects/designsystem/src/stories/Header.stories.ts": [
@@ -913,7 +2654,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<Header>",
-                    "defaultValue": "{\r\n  title: 'Example/Header',\r\n  component: Header,\r\n  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/angular/writing-docs/autodocs\r\n  tags: ['autodocs'],\r\n  render: (args) => ({ props: args }),\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [Button],\r\n      imports: [CommonModule],\r\n    }),\r\n  ],\r\n  parameters: {\r\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\r\n    layout: 'fullscreen',\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  title: 'Example/Header',\r\n  component: Header,\r\n  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/angular/writing-docs/autodocs\r\n  tags: ['autodocs'],\r\n  render: (args) => ({ props: args }),\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [CommonModule],\r\n    }),\r\n  ],\r\n  parameters: {\r\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\r\n    layout: 'fullscreen',\r\n  },\r\n}"
                 }
             ],
             "projects/designsystem/src/stories/Page.stories.ts": [
@@ -945,7 +2686,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<Page>",
-                    "defaultValue": "{\r\n  title: 'Example/Page',\r\n  component: Page,\r\n  parameters: {\r\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\r\n    layout: 'fullscreen',\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [Button, Header],\r\n      imports: [CommonModule],\r\n    }),\r\n  ],\r\n}"
+                    "defaultValue": "{\r\n  title: 'Example/Page',\r\n  component: Page,\r\n  parameters: {\r\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\r\n    layout: 'fullscreen',\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [Header],\r\n      imports: [CommonModule],\r\n    }),\r\n  ],\r\n}"
                 }
             ],
             "projects/designsystem/.storybook/preview.ts": [
@@ -964,19 +2705,6 @@
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
-            "projects/designsystem/src/stories/Button.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<Button>",
-                    "file": "projects/designsystem/src/stories/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 180
-                }
-            ],
             "projects/designsystem/src/stories/Header.stories.ts": [
                 {
                     "name": "Story",
@@ -1007,7 +2735,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 3,
+        "count": 0,
         "status": "low",
         "files": [
             {
@@ -1036,56 +2764,6 @@
                 "name": "DesignsystemService",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/designsystem/src/stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Large",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/designsystem/src/stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "meta",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/designsystem/src/stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/designsystem/src/stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Secondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/designsystem/src/stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Small",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -1217,13 +2895,439 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/designsystem/src/stories/button.component.ts",
+                "filePath": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "ButtonComponent",
-                "coveragePercent": 83,
-                "coverageCount": "5/6",
-                "status": "very-good"
+                "name": "InputFieldsUploadFileComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/23",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DisabledField",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "IconLabelField",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "IconLabelFieldFilled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "RequiredField",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "RequiredFieldErrorState",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ShowHint",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "type",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/input-field-upload-file/input-fields-upload-file.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ValueBinding",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DisabledField",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "IconLabelField",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "IconLabelFieldFilled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MaxLenght",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "RequiredField",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "RequiredFieldErrorState",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ShowHint",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "type",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/input-field/input-field.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ValueBinding",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/input-field/input-field.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InputFieldComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/25",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/input-file/input-file.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/input-file/input-file.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/input-file/input-file.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InputFileComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/password-field/password-field.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/password-field/password-field.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PasswordErrorState",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/password-field/password-field.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PasswordValue",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/password-field/password-field.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PasswordValueShown",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/password-field/password-field.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/password-field/password-field.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PasswordFieldComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/19",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "AutoResize",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DisabledField",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "IconLabelField",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "IconLabelFieldFilled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "RequiredField",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "RequiredFieldErrorState",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ShowHint",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "type",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/textarea/textarea.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ValueBinding",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/designsystem/src/stories/components/textarea/textarea.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TextareaComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/26",
+                "status": "low"
             },
             {
                 "filePath": "projects/designsystem/src/stories/header.component.ts",

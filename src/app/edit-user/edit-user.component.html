@@ -8,6 +8,7 @@
         </div>
         <div class="form-group mb-1">
             <label class="mt-1">Age</label>
+            <ds-basic-button [label]='test'></ds-basic-button>
             <input type="number" ngModel [(ngModel)]="user.age" minlength="3" required #age="ngModel" 
             name="age" class="form-control">
         </div>

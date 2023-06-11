@@ -10,6 +10,7 @@ import { UserInfoService } from '../services/user-info.service';
 export class EditUserComponent {
   user_id:any;
   user:any;
+  test ="my button"; 
   constructor(private activatedRoute: ActivatedRoute,
     private router:Router, private userService: UserInfoService){}
   ngOnInit() : void{
@@ -21,9 +22,8 @@ export class EditUserComponent {
   };
   
   edit(){
-    this.user.age(this.user.age);
+    this.user.age = this.user.age;
     this.router.navigate(['./']);
-    alert("hel");
   }
 
   
